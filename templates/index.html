@@ -9,14 +9,14 @@
 <body>
     {%block body%}
     <form action="/", method = "POST">
-        <label for="data">Site  URL:</label>
-        <input type="text" id="data" name="data"><br><br>
-        <!-- <label for="token">Access Token:</label>
-        <input type="token" id="token" name="token"><br><br> -->
-        <label for="username">Username:</label>
-        <input type="username" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
+        <label for="client_id">Client ID:</label>
+        <input type="text" id="client_id" name="client_id"><br><br>
+        <label for="password">Client Secret:</label>
+        <input type="password" id="client_secret" name="client_secret"><br><br>
+        <label for="site_url">Site  URL:</label>
+        <input type="url" id="site_url" name="site_url"><br><br>
+        <label for="list_name">List Name:</label>
+        <input type="text" id="list_name" name="list_name"><br><br>
         <input type="submit" value="Submit">
       </form>
     {%endblock%}
