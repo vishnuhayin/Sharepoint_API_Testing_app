@@ -2,7 +2,9 @@ from flask import Flask, render_template, request, jsonify
 import requests
 from requests_ntlm import HttpNtlmAuth
 
-app = Flask(__name__)   
+from website import create_app
+
+app = create_app()   
 
 '''
 if access token is provided
@@ -19,7 +21,7 @@ def index():
         tenant =  'allianzms' # e.g. https://tenant.sharepoint.com
         tenant_id = '6e06e42d-6925-47c6-b9e7-9581c7ca302a' # tenant_id of allianzms 
         client_id = client_id + '@' + tenant_id
-
+        
         data = {
             'grant_type':'client_credentials',
             'resource': "00000003-0000-0ff1-ce00-000000000000/" + tenant + ".sharepoint.com@" + tenant_id, # "00000003-0000-0ff1-ce00-000000000000" is a constant used in an add-in that is accessing SharePoint
